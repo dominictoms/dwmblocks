@@ -1,14 +1,15 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
-     /*Icon*/ /*Command*/                                                                   /*Interval*/  /*Signal*/
-    {"",      "hostname",                                                                   0,            0},
-    {"",      "echo $(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')",   0,            1},
-    {"",      "echo $(xbacklight -get | cut -d. -f1)%",                                     0,            2},
-    {"",      "echo $(cat /sys/class/power_supply/BAT0/capacity)%",                         1,            0},
-    {"",      "echo $(free -m|awk 'NR==2{print$3}')M",                                      1,            0},
-    {"",      "date +%A' '%B' '%d' '%H:%M:%S",                                              1,            0},
+     /*Icon*/    /*Command*/                                                                  /*Interval*/  /*Signal*/
+    {"\uf108 ",  "hostname",                                                                  0,            0},
+    {"\uf58f ",  "echo $(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')",  0,            1},
+    {"\uf042 ",  "echo $(xbacklight -get | cut -d. -f1)%",                                    0,            2},
+    {"\uf240 ",  "echo $(cat /sys/class/power_supply/BAT0/capacity)%",                        1,            0},
+    {"\uf2db ",  "echo $(free -m|awk 'NR==2{print$3}')M",                                     1,            0},
+    {"\uf133 ",  "date +%A' '%B' '%d",                                                        1,            0},
+    {"\uf017 ",  "date +%H:%M:%S",                                                            1,            0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char delim[] = " ";
+static char delim[] = " | ";
 static unsigned int delimLen = 5;
