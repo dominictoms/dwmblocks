@@ -5,7 +5,7 @@ static const Block blocks[] = {
     {"\uf58f ",  "echo $(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')",  0,            1},
     {"\uf042 ",  "echo $(xbacklight -get | cut -d. -f1)%",                                    0,            2},
     {"\uf240 ",  "echo $(cat /sys/class/power_supply/BAT0/capacity)%",                        1,            0},
-    {"\uf2db ",  "echo $(free -m|awk 'NR==2{print$3}')M",                                     1,            0},
+    {"\uf2db ",  "free -h | awk 'NR==2{print$3}'",                                            1,            0},
     {"\uf133 ",  "date +%A' '%B' '%d",                                                        1,            0},
     {"\uf017 ",  "date +%H:%M:%S",                                                            1,            0},
 };
