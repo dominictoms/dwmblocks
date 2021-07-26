@@ -2,7 +2,7 @@
 static const Block blocks[] = {
      /*Icon*/    /*Command*/                                                              /*Interval*/  /*Signal*/
     {"\uf108 ",  "echo $(whoami)@$(hostname)",                                            0,            0},
-    {"\uf1eb ",  "echo $(cat /proc/net/wireless | awk 'NR==3 {print $3}' | tr -d '.')%",  1,            1},
+    {"\uf1eb ",  "echo $(cat /proc/net/wireless | awk 'NR==3 {print $3}' | tr -d '.')%",  1,            0},
     {"\uf58f ",  "pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}'",      0,            1},
     {"\uf042 ",  "echo $(xbacklight -get | cut -d. -f1)%",                                0,            2},
     {"\uf240 ",  "echo $(cat /sys/class/power_supply/BAT0/capacity)%",                    1,            0},
